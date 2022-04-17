@@ -1,7 +1,8 @@
 # escape=`
 FROM mcr.microsoft.com/windows/servercore:ltsc2022 AS build
 SHELL ["powershell", "-Command", "$ErrorActionPreference = 'Stop';"]
-ENV TAUTULLI_VERSION="2.9.7"
+ARG APP_VERSION
+ENV TAUTULLI_VERSION ${APP_VERSION}
 ENV URI="https://github.com/Tautulli/Tautulli/archive/refs/tags/v${TAUTULLI_VERSION}.zip"
 
 RUN Invoke-WebRequest -Uri $env:URI -OutFile c:\tautulli.zip

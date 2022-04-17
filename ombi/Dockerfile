@@ -1,7 +1,8 @@
 # escape=`
 FROM mcr.microsoft.com/windows/servercore:ltsc2022 AS build
 SHELL ["powershell", "-Command", "$ErrorActionPreference = 'Stop';"]
-ENV OMBI_VERSION="4.16.10"
+ARG APP_VERSION
+ENV OMBI_VERSION ${APP_VERSION}
 ENV URI="https://github.com/Ombi-app/Ombi/releases/download/v${OMBI_VERSION}/win10-x64.zip"
 
 RUN Invoke-WebRequest -Uri $env:URI -OutFile c:\ombi.zip

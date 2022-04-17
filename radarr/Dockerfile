@@ -2,8 +2,8 @@
 FROM mcr.microsoft.com/windows/servercore:ltsc2022 AS build
 SHELL ["powershell", "-Command", "$ErrorActionPreference = 'Stop';"]
 RUN iwr https://chocolatey.org/install.ps1 -UseBasicParsing | iex;
-
-ENV RADARR_VERSION="4.1.0.6175"
+ARG APP_VERSION
+ENV RADARR_VERSION ${APP_VERSION}
 RUN choco install radarr --ignore-checksums -y --version $env:RADARR_VERSION;
 
 FROM mcr.microsoft.com/windows/servercore:ltsc2022 AS final

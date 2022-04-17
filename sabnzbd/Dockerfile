@@ -2,8 +2,8 @@
 FROM mcr.microsoft.com/windows/servercore:ltsc2022 AS build
 SHELL ["powershell", "-Command", "$ErrorActionPreference = 'Stop';"]
 RUN iwr https://chocolatey.org/install.ps1 -UseBasicParsing | iex;
-
-ENV SABNZBD_VERSION="3.5.3"
+ARG APP_VERSION
+ENV SABNZBD_VERSION ${APP_VERSION}
 RUN choco install sabnzbd --ignore-checksums -y --version $env:SABNZBD_VERSION;
 
 FROM mcr.microsoft.com/windows/servercore:ltsc2022 AS final
