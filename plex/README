@@ -1,0 +1,5 @@
+**GPU Acceleration is currently broken**
+
+For GPU acceleration to work, this container has to be ran on Windows Server 2022/Windows 11 in process isolation mode.
+Launch with the follow options
+docker run --isolation process --device class/5B45201D-F2F2-4F3B-85BB-30FF1F953599 -v C:\config\plex:C:\config -v Z:\:C:\media -p 32400:32400 fallendusk/plex
