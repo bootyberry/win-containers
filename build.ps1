@@ -8,7 +8,7 @@ $imagename = ("{0}/{1}:{2}" -f $docker_repo, $container, $env:APP_VERSION)
 $imagelatest = ("{0}/{1}:latest" -f $docker_repo, $container)
 
 Write-Host "Building $imagename."
-docker build --build-arg APP_VERSION=$env:APP_VERSION -t $imagename -t $imagelatest ./$container
+docker build --pull --build-arg APP_VERSION=$env:APP_VERSION -t $imagename -t $imagelatest ./$container
 
 Write-Host "Pushing image to docker hub..."
 docker push $imagelatest
