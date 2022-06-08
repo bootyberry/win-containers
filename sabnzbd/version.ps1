@@ -1,1 +1,1 @@
-$env:APP_VERSION = "3.5.3"
+$env:APP_VERSION = "3.6.0"
