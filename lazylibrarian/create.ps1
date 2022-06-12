@@ -4,7 +4,7 @@ docker run -d `
     --hostname lazylibrarian `
     --name lazylibrarian `
     -v c:\services\lazylibrarian:c:\config `
-    -v c:\temp\downloads:c:\downloads `
+    -v d:\temp\downloads:c:\downloads `
     -v "d:\onedrive\onedrive - fallendusk\Books:c:\books" `
     -v W:\AudioBooks:C:\audiobooks `
     -p 5299:5299 `

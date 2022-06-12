@@ -9,7 +9,7 @@ docker run -d `
     --name radarr `
     --security-opt "credentialspec=file://fallendusk_radarr.json" `
     -v c:\services\radarr:c:\config `
-    -v c:\temp\downloads:c:\downloads `
+    -v d:\temp\downloads:c:\downloads `
     -p 7878:7878 `
     --pull=always `
     --restart=always `

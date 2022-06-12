@@ -9,7 +9,7 @@ docker run -d `
     --name sonarr `
     --security-opt "credentialspec=file://fallendusk_sonarr.json" `
     -v c:\services\sonarr:c:\config `
-    -v c:\temp\downloads:c:\downloads `
+    -v d:\temp\downloads:c:\downloads `
     -p 8989:8989 `
     --pull=always `
     --restart=always `
